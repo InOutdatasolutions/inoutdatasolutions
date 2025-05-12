@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>InOut DataSolutions</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
@@ -24,7 +24,12 @@
       background-color: var(--primary);
       color: white;
       padding: 20px;
-      text-align: center;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    header img {
+      height: 60px;
     }
     nav {
       background-color: var(--secondary);
@@ -64,21 +69,27 @@
       text-align: center;
       padding: 20px;
     }
-    .bilingual {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
+    .language-toggle {
+      text-align: center;
+      margin: 20px;
     }
-    h2 {
-      color: var(--primary);
+    .lang-en {
+      display: none;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>InOut DataSolutions</h1>
-    <p>Transformamos datos en decisiones inteligentes / We turn data into smart decisions</p>
+    <img src="logo.png" alt="InOut Logo" />
+    <div>
+      <h1>InOut DataSolutions</h1>
+      <p>Data-powered decisions</p>
+    </div>
   </header>
+
+  <div class="language-toggle">
+    <button onclick="toggleLanguage()" class="btn">Español / English</button>
+  </div>
 
   <nav>
     <a href="#inicio">Inicio / Home</a>
@@ -88,73 +99,72 @@
   </nav>
 
   <section id="inicio">
-    <div class="bilingual">
-      <div>
-        <h2>Bienvenido a InOut</h2>
-        <p>Automatizamos reportes, consolidamos datos y creamos dashboards que impulsan decisiones.</p>
-        <a href="#contacto" class="btn">Contáctanos</a>
-      </div>
-      <div>
-        <h2>Welcome to InOut</h2>
-        <p>We automate reports, consolidate data and build dashboards that drive smart business actions.</p>
-        <a href="#contacto" class="btn">Contact Us</a>
-      </div>
+    <div class="lang-es">
+      <h2>Bienvenido a InOut</h2>
+      <p>Automatizamos reportes, consolidamos datos y creamos dashboards que impulsan decisiones.</p>
+    </div>
+    <div class="lang-en">
+      <h2>Welcome to InOut</h2>
+      <p>We automate reports, consolidate data and build dashboards that drive smart business actions.</p>
     </div>
   </section>
 
   <section id="servicios">
-    <div class="bilingual">
-      <div>
-        <h2>Servicios</h2>
-        <ul>
-          <li>Automatización de datos</li>
-          <li>Dashboards con Looker Studio</li>
-          <li>Scripts personalizados (Google Apps Script)</li>
-          <li>Consolidación y limpieza de datos</li>
-        </ul>
-      </div>
-      <div>
-        <h2>Services</h2>
-        <ul>
-          <li>Data automation</li>
-          <li>Dashboards with Looker Studio</li>
-          <li>Custom scripting (Google Apps Script)</li>
-          <li>Data consolidation & cleaning</li>
-        </ul>
-      </div>
+    <div class="lang-es">
+      <h2>Servicios</h2>
+      <ul>
+        <li>Automatización de datos</li>
+        <li>Dashboards con Looker Studio</li>
+        <li>Scripts personalizados (Google Apps Script)</li>
+        <li>Consolidación y limpieza de datos</li>
+      </ul>
+    </div>
+    <div class="lang-en">
+      <h2>Services</h2>
+      <ul>
+        <li>Data automation</li>
+        <li>Dashboards with Looker Studio</li>
+        <li>Custom scripting (Google Apps Script)</li>
+        <li>Data consolidation & cleaning</li>
+      </ul>
     </div>
   </section>
 
   <section id="nosotros">
-    <div class="bilingual">
-      <div>
-        <h2>Sobre Nosotros</h2>
-        <p>Somos una consultora especializada en soluciones de datos para empresas que buscan eficiencia y claridad.</p>
-      </div>
-      <div>
-        <h2>About Us</h2>
-        <p>We are a consulting firm focused on data solutions for companies seeking efficiency and clarity.</p>
-      </div>
+    <div class="lang-es">
+      <h2>Sobre Nosotros</h2>
+      <p>Somos una consultora especializada en soluciones de datos para empresas que buscan eficiencia y claridad.</p>
+    </div>
+    <div class="lang-en">
+      <h2>About Us</h2>
+      <p>We are a consulting firm focused on data solutions for companies seeking efficiency and clarity.</p>
     </div>
   </section>
 
   <section id="contacto">
-    <div class="bilingual">
-      <div>
-        <h2>Contacto</h2>
-        <p>Email: contacto@inoutdatasolutions.com</p>
-        <p>WhatsApp: +591 70000000</p>
-      </div>
-      <div>
-        <h2>Contact</h2>
-        <p>Email: contact@inoutdatasolutions.com</p>
-        <p>WhatsApp: +591 70000000</p>
-      </div>
+    <div class="lang-es">
+      <h2>Contacto</h2>
+      <p>Email: contacto@inoutdatasolutions.com</p>
+      <p>WhatsApp: +591 70000000</p>
+    </div>
+    <div class="lang-en">
+      <h2>Contact</h2>
+      <p>Email: contact@inoutdatasolutions.com</p>
+      <p>WhatsApp: +591 70000000</p>
     </div>
   </section>
 
   <footer>
     &copy; 2025 InOut DataSolutions. Todos los derechos reservados.
   </footer>
+
+  <script>
+    function toggleLanguage() {
+      const es = document.querySelectorAll('.lang-es');
+      const en = document.querySelectorAll('.lang-en');
+      es.forEach(el => el.style.display = el.style.display === 'none' ? 'block' : 'none');
+      en.forEach(el => el.style.display = el.style.display === 'none' ? 'block' : 'none');
+    }
+  </script>
 </body>
 </html>
